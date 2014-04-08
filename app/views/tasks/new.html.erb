@@ -1,0 +1,14 @@
+<h1>New task for <%= @list.name %></h1>
+
+<%= form_for [@list, @task] do |form| %>
+  <%= render "error_messages", target: @task %>
+  <div>
+    <%= form.text_field :name, placeholder: "Name" %>
+  </div>
+  <div>
+    <%= form.text_area :description, placeholder: "Description" %>
+  </div>
+  <div>
+    <%= form.submit "Create Task" %>
+  </div>
+<% end %>

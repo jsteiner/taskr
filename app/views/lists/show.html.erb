@@ -1,0 +1,7 @@
+<h1><%= @list.name %></h1>
+
+<%= link_to "New task", [:new, @list, :task] %>
+
+<ul>
+  <%= render @list.tasks %>
+</ul>
