@@ -1,6 +1,9 @@
 <h1><%= @list.name %></h1>
 
-<%= link_to "New task", [:new, @list, :task] %>
+<% if signed_in? && current_user.owns?(@list) %>
+  <%= link_to "Edit", [:edit, @list] %>
+  <%= link_to "New task", [:new, @list, :task] %>
+<% end %>
 
 <ul>
   <%= render @list.tasks %>

@@ -1,0 +1,17 @@
+<%= form_for @list do |form| %>
+  <%= render "error_messages", target: @list %>
+  <%= form.text_field :name, placeholder: "Name" %>
+  <%= form.submit "Create List" %>
+<% end %>
+
+<h1>Your lists</h1>
+<ul>
+  <%= render @lists %>
+</ul>
+
+<h2>Most recent task</h2>
+<% if @most_recent_task.present? %>
+  <%= render @most_recent_task %>
+<% else %>
+  You have no tasks!
+<% end %>

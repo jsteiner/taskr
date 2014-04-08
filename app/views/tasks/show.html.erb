@@ -1,0 +1,6 @@
+<% if signed_in? && current_user.owns?(@task) %>
+  <%= link_to "Edit", [:edit, @task] %>
+<% end %>
+
+<h1><%= @task.name %></h1>
+<p><%= @task.description %></p>

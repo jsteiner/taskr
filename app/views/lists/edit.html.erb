@@ -1,10 +1,5 @@
 <%= form_for @list do |form| %>
   <%= render "error_messages", target: @list %>
   <%= form.text_field :name, placeholder: "Name" %>
-  <%= form.submit "Create List" %>
+  <%= form.submit "Update List" %>
 <% end %>
-
-<h1>Your lists</h1>
-<ul>
-  <%= render @lists %>
-</ul>
