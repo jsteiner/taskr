@@ -7,7 +7,14 @@ class ListsController < ApplicationController
   end
 
   def create
-    respond_with current_user.lists.create(list_params)
+    @list = current_user.lists.new(list_params)
+    if @list.save
+      redirect_to @list
+    else
+      @lists = current_user.lists
+      @most_recent_task = current_user.most_recent_task
+      render 'dashboards/show'
+    end
   end
 
   def edit
